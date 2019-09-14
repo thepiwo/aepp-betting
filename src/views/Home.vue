@@ -1,15 +1,17 @@
 <template>
   <div>
     <h1 class="h1">Dice Bet Æpp</h1>
+    <Dice />
   </div>
 </template>
 
 <script>
   import aeternity from "../utils/aeternity";
+  import Dice from "../components/Dice.vue";
 
   export default {
     name: 'Home',
-    components: {},
+    components: {Dice},
     data() {
       return {
         address: null,
