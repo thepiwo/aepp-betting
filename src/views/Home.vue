@@ -1,9 +1,6 @@
 <template>
   <div>
-    <h1>Account</h1>
-    {{address}}
-    <h1>Balance</h1>
-    {{balance}} AE
+    <h1 class="h1">Dice Bet Æpp</h1>
   </div>
 </template>
 
@@ -19,7 +16,6 @@
         balance: null
       };
     },
-
 
     async mounted() {
       await aeternity.initClient();

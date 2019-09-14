@@ -1,7 +1,20 @@
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
 
 /* Add custom classes here */
+
+body {
+  overscroll-behavior: contain;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.max-w-desktop {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 1.6rem;
+}
