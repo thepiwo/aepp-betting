@@ -1,7 +1,6 @@
 import Aepp from '@aeternity/aepp-sdk/es/ae/aepp'
 import Util from './util'
-import identity from '../contracts/Idenitity.aes'
-import {Universal} from "@aeternity/aepp-sdk/es/ae/universal";
+import contractSource from '../contracts/Dicae.aes';
 
 const aeternity = {
   client: null,
@@ -9,7 +8,7 @@ const aeternity = {
   height: null,
   networkId: null,
   passive: false,
-  contractAddress: ''
+  contractAddress: 'ct_2rLLQmt84dqQvPmkckzPRHwxPFVBuADo7t92nTLa16jVf3y5Pe'
 };
 
 const timeout = async (promise) => {
@@ -31,8 +30,8 @@ aeternity.initProvider = async () => {
       .catch(() => '0');
     aeternity.height = await aeternity.client.height();
     aeternity.networkId = (await aeternity.client.getNodeInfo()).nodeNetworkId;
-    if(aeternity.contractAddress)
-      aeternity.contract = await aeternity.client.getContractInstance(registryContractSource, {contractAddress: aeternity.contractAddress});
+    if (aeternity.contractAddress)
+      aeternity.contract = await aeternity.client.getContractInstance(contractSource, {contractAddress: aeternity.contractAddress});
     return true;
   } catch (e) {
     console.error(e);
@@ -48,14 +47,6 @@ aeternity.initMobileBaseAepp = async () => {
     console.warn('Base Aepp init failed');
     return false;
   }
-};
-
-aeternity.initStaticClient = async () => {
-  return Universal({
-    url: 'http://localhost:3001',
-    internalUrl: 'http://localhost:3001',
-    compilerUrl: 'http://localhost:3080'
-  });
 };
 
 aeternity.hasActiveWallet = () => {
