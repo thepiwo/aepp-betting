@@ -8,7 +8,7 @@ const aeternity = {
   height: null,
   networkId: null,
   passive: false,
-  contractAddress: 'ct_2rLLQmt84dqQvPmkckzPRHwxPFVBuADo7t92nTLa16jVf3y5Pe'
+  contractAddress: 'ct_GqRtjUBWAm2LvCPrgFieBq5sxYtDZyG44XjdmAkCnZ5XbLV7D'
 };
 
 const timeout = async (promise) => {
